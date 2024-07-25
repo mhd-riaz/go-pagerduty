@@ -1,4 +1,4 @@
-FROM golang
+FROM golang:1.23rc2
 ADD . /go/src/github.com/PagerDuty/go-pagerduty
 WORKDIR /go/src/github.com/PagerDuty/go-pagerduty
 RUN go get ./... && go test -v -race -cover ./...
