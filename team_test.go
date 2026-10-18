@@ -391,7 +391,7 @@ func TestListAllMembersSuccessMultiplePages(t *testing.T) {
 	pages := genRespPages(expectedNumResults, testMaxPageSize, genMembersRespPage, t)
 
 	mux.HandleFunc("/teams/"+testValidTeamID+"/members", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, pages[currentPage])
+		fmt.Fprint(w, pages[currentPage])
 		currentPage++
 	})
 
